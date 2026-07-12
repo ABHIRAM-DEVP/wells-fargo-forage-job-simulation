@@ -37,11 +37,13 @@ public class Portfolio {
 
     @OneToOne
     @JoinColumn(name = "client_id", nullable = false)
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties("portfolio")
     private Client client;
 
     @OneToMany(mappedBy = "portfolio",
                cascade = CascadeType.ALL,
-               fetch = FetchType.LAZY)
+               fetch = FetchType.EAGER)
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties("portfolio")
     private List<Security> securities;
 
     @PrePersist

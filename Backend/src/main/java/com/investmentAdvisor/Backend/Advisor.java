@@ -38,5 +38,6 @@ public class Advisor {
                cascade = CascadeType.ALL,
                fetch = FetchType.LAZY)
                
+    @com.fasterxml.jackson.annotation.JsonIgnore
     private List<Client> clients;
 }

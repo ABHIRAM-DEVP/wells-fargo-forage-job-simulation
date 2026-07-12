@@ -32,5 +32,6 @@ public class Security {
 
     @ManyToOne
     @JoinColumn(name = "portfolio_id", nullable = false)
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties("securities")
     private Portfolio portfolio;
 }

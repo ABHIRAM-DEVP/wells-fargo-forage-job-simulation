@@ -40,5 +40,6 @@ public class Client {
 
     @OneToOne(mappedBy = "client",
               cascade = CascadeType.ALL)
+    @com.fasterxml.jackson.annotation.JsonIgnoreProperties("client")
     private Portfolio portfolio;
 }
